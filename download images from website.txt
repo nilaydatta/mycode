@@ -1,0 +1,40 @@
+const images = document.querySelectorAll(".entry-content figure img");
+const srcList = [];
+let i = 0;
+
+setInterval(function(){
+    if(images.length > i){
+        srcList.push(images[i].src);
+        const link = document.createElement("a");
+        link.id=i;
+        link.download = images[i].alt;
+        link.href = images[i].src;
+        link.click();
+        i++;
+    }
+},2000);
+==============================================================
+const images = document.querySelectorAll(".entry-content p img");
+const srcList = [];
+let i = 0;
+setInterval(function(){
+    if(images.length > i){
+        srcList.push(images[i].src);
+        const link = document.createElement("a");
+        link.id=i;
+        link.download = images[i].alt;
+        link.href = images[i].src;
+        link.click();
+        i++;
+    }
+},2000);
+==============================================================
+var images = document.getElementsByTagName('img');
+var i = 0;
+
+setInterval(function(){
+    if(images.length > i){
+        window.open(images[i].src,'_blank');
+        i++;
+    }
+},1000);

@@ -1,0 +1,51 @@
+// const obj = {
+//     carName: 'Ford',
+//     carYear: '1961',
+//     carColor: 'Blue',
+//     make: function () {
+//       return `This ${this.carName} of color ${this.carColor}, is made in ${this.carYear}`;
+//     }
+// }
+class Car {
+  constructor(brand, year, color, price) {
+    this.name = brand;
+    this.year = year;
+    this.color = color;
+    this.price = price;
+  }
+  make() {
+    return `This ${this.name} of color ${this.color}, is made in ${this.year}`;
+  }
+  interest(rate, time) {
+    return (this.price*rate*time)/100;
+  }
+  amount(rate, time) {
+    return this.price + (this.price*rate*time)/100;
+  }
+};
+
+const bmvcar = new Car("BMW", "1940", "Black", 200000);
+console.log(bmvcar.amount(7.2, 15))
+
+function car(name, year, color, price) {
+  return {
+    name: name,
+    year: year,
+    color: color,
+    price: price,
+    make: function () {
+      return `This ${this.name} of color ${this.color}, is made in ${this.year}`;
+    },
+    interest: function(rate, time) {
+      return (this.price*rate*time)/100;
+    },
+    amount: function(rate, time) {
+      return this.price + (this.price*rate*time)/100;
+    }
+  };
+};
+
+const fordcar = car("Ford", "1957", "Red", 400000);
+console.log(fordcar.amount(7.2, 15))
+
+  
